@@ -26,23 +26,6 @@ $("#cloud4").click(function () {
 	$(".cloud4-rain").removeClass("hidden").addClass("cloud4-raindrop");
 });
 
-// CHANGE BETWEEN DAY + NIGHT
-
-var background = document.getElementById("background");
-var sun = document.getElementById("sun");
-var moon = document.getElementById("moon");
-
-sun.addEventListener("click", function () {
-	sun.style.top = "1000px";
-	moon.style.top = "40px";
-	background.style.filter = "brightness(0.3)";
-});
-
-moon.addEventListener("click", function () {
-	sun.style.top = "20px";
-	moon.style.top = "1000px";
-	background.style.filter = "brightness(1)";
-});
 
 
 // CLOVERS FROM CLOUD TEARS
@@ -84,23 +67,104 @@ cloud4.addEventListener("click", function () {
 
 var rainbow = document.getElementById("rainbow");
 var rainbowProgress = 0;
+var clover1clicked = false;
+var clover2clicked = false;
+var clover3clicked = false;
+var clover4clicked = false;
 
-clover1.addEventListener("click", function (){
-	rainbowProgress += 0.25;
-	rainbow.style.opacity = rainbowProgress;
+clover1.addEventListener("click", function () {
+	if (clover1clicked == false) {
+		clover1.style.animation = "pulse 0.5s";
+		rainbowProgress += 0.25;
+		if (isDaytime == true) {
+			rainbow.style.opacity = rainbowProgress;
+		}
+		clover1clicked = true;
+		console.log(rainbowProgress);
+	}
 });
 
-clover2.addEventListener("click", function (){
-	rainbowProgress += 0.25;
-	rainbow.style.opacity = rainbowProgress;
+clover2.addEventListener("click", function () {
+	if (clover2clicked == false) {
+		clover2.style.animation = "pulse 0.5s";
+		rainbowProgress += 0.25;
+		if (isDaytime == true) {
+			rainbow.style.opacity = rainbowProgress;
+		}
+		clover2clicked = true;
+		console.log(rainbowProgress);
+	}
 });
 
-clover3.addEventListener("click", function (){
-	rainbowProgress += 0.25;
-	rainbow.style.opacity = rainbowProgress;
+clover3.addEventListener("click", function () {
+	if (clover3clicked == false) {
+		clover3.style.animation = "pulse 0.5s";
+		rainbowProgress += 0.25;
+		if (isDaytime == true) {
+			rainbow.style.opacity = rainbowProgress;
+		}
+		clover3clicked = true;
+		console.log(rainbowProgress);
+	}
 });
 
-clover4.addEventListener("click", function (){
-	rainbowProgress += 0.25;
+clover4.addEventListener("click", function () {
+	if (clover4clicked == false) {
+		clover4.style.animation = "pulse 0.5s";
+		rainbowProgress += 0.25;
+		if (isDaytime == true) {
+			rainbow.style.opacity = rainbowProgress;
+		}
+		clover4clicked = true;
+		console.log(rainbowProgress);
+	}
+});
+
+// MOVE MOUNTAINS
+
+var bgMountL = document.getElementById("bg-mountain-1");
+var bgMountM = document.getElementById("bg-mountain-2");
+var bgMountR = document.getElementById("bg-mountain-3");
+var hillL = document.getElementById("hill-left-container");
+var hillR = document.getElementById("hill-right-container");
+
+rainbow.addEventListener("click", function () {
+	if (rainbowProgress == 1) {
+		bgMountL.style.left = "-1000px";
+		bgMountM.style.left = "-450px";
+		bgMountR.style.right = "-300px";
+		hillL.style.left = "-1000px";
+		hillR.style.right = "-1000px";
+		rainbow.style.right = "270px";
+		sun.style.left = "10px";
+		cloud1.style.left = "70px"
+		cloud2.style.left = "320px"
+		cloud3.style.right = "185px"
+		cloud4.style.right = "10px"
+	}
+});
+
+// CHANGE BETWEEN DAY + NIGHT
+
+var background = document.getElementById("background");
+var sun = document.getElementById("sun");
+var moon = document.getElementById("moon");
+var isDaytime = true;
+
+sun.addEventListener("click", function () {
+	sun.style.top = "1000px";
+	moon.style.top = "40px";
+	background.style.filter = "brightness(0.3)";
+	rainbow.style.opacity = "0";
+	rainbow.style.pointerEvents = "none";
+	isDaytime = false;
+});
+
+moon.addEventListener("click", function () {
+	sun.style.top = "20px";
+	moon.style.top = "1000px";
+	background.style.filter = "brightness(1)";
 	rainbow.style.opacity = rainbowProgress;
+	rainbow.style.pointerEvents = "all";
+	isDaytime = true;
 });
