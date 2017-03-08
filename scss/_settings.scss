@@ -1,18 +1,29 @@
-.flex {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-between;
-	align-content: center;
-	align-items: center;
-}
-
 .hidden {
 	display: none;
 }
 
 * {
 	transition-timing-function: linear;
+}
+
+/* FONTS */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Baloo Bhaina', sans-serif;
+	font-size: 3em;
+	font-weight: 400;
+	margin: 0;
+	color: #318C4D;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	margin: 0;
+	color: #232323;
+	font-size: 1.25em;
 }

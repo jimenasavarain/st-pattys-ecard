@@ -1,12 +1,25 @@
 @import 'normalize';
 @import 'settings';
 @import 'clouds';
+@import 'factbox';
+
+body {
+	background: linear-gradient(to top, #fddb92 0%, #d1fdff 100%) no-repeat center center;
+	background-size: cover;
+	height: 100vh;
+}
+
 .container {
 	width: 1060px;
 	height: 660px;
-	position: relative;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	overflow: hidden;
-	margin: 0 auto;
+	margin: auto;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .background {
@@ -23,12 +36,12 @@
 .bg-mountains {
 	position: absolute;
 	width: 550px;
-	bottom: 0;
+	bottom: -15px;
 	transition: 3s;
 }
 
 #bg-mountain-1 {
-	left: 0;
+	left: -15px;
 }
 
 #bg-mountain-2 {
@@ -37,7 +50,7 @@
 }
 
 #bg-mountain-3 {
-	right: 0;
+	right: -15px;
 }
 
 #rainbow {
@@ -47,7 +60,7 @@
 	position: absolute;
 	bottom: -10px;
 	right: 50px;
-	transition: 1s;
+	transition: 2s;
 }
 
 .sun {
@@ -107,11 +120,11 @@
 }
 
 #hill-left {
-	left: -5px;
+	left: -15px;
 }
 
 #hill-right {
-	right: -5px;
+	right: -15px;
 }
 
 .grass {
@@ -119,27 +132,27 @@
 	width: 30px;
 }
 
-.grass-left:nth-child(4) {
-	bottom: 150px;
+.grass-left:nth-child(5) {
+	bottom: 130px;
 	left: 40px;
 }
 
-.grass-left:nth-child(5) {
+.grass-left:nth-child(6) {
 	bottom: 50px;
 	left: 120px;
 }
 
-.grass-left:nth-child(6) {
-	bottom: 110px;
+.grass-left:nth-child(7) {
+	bottom: 90px;
 	left: 215px;
 }
 
-.grass-left:nth-child(7) {
+.grass-left:nth-child(8) {
 	bottom: 75px;
 	left: 330px;
 }
 
-.grass-left:nth-child(8) {
+.grass-left:nth-child(9) {
 	bottom: 25px;
 	left: 420px;
 }
@@ -176,12 +189,12 @@
 	transform-origin: center bottom;
 }
 
-.clover-left:nth-child(2) {
-	bottom: 112px;
+.clover-left:nth-child(3) {
+	bottom: 92px;
 	left: 227px;
 }
 
-.clover-left:nth-child(3) {
+.clover-left:nth-child(4) {
 	bottom: 27px;
 	left: 438px;
 }
@@ -203,10 +216,13 @@
 }
 
 .flag {
-	width: 200px;
-	height: 260px;
+	position: absolute;
+	top: -330px;
+	left: 120px;
+	width: 140px;
+	height: 200px;
 	background: url(../images/hills/flag-sprite.svg) no-repeat;
-	background-size: 1632px 260px;
+	background-size: 1120px 200px;
 	animation: play .8s steps(8) infinite;
 }
 
@@ -215,17 +231,21 @@
 		background-position: 0px;
 	}
 	to {
-		background-position: -1632px;
+		background-position: -1120px;
 	}
 }
 
 .waterfall {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 180px;
 	height: 250px;
 	background: url(../images/hills/waterfall-sprite-01.svg) no-repeat;
 	background-size: 1440px 250px;
 	animation: waterfall 1.5s steps(8) infinite;
 	transform: skewX(-20deg);
+	border-radius: 25px 0 0 0;
 }
 
 @keyframes waterfall {
@@ -238,11 +258,11 @@
 }
 
 .snek {
-	width: 200px;
-	height: 300px;
-	background: url(../images/hills/snek-sprite-01-01.svg) no-repeat;
-	background-size: 2400px 300px;
-	animation: snek 0.8s steps(12) infinite;
+	width: 100px;
+	height: 160px;
+	background: url(../images/hills/snek.svg) no-repeat;
+	background-size: 800px 160px;
+	animation: snek 0.8s steps(8) infinite;
 }
 
 @keyframes snek {
@@ -250,6 +270,33 @@
 		background-position: 0px;
 	}
 	to {
-		background-position: -2400px;
+		background-position: -800px;
+	}
+}
+
+.snek-container {
+	position: absolute;
+	top: -100px;
+	left: 0;
+	width: 100px;
+	height: 200px;
+}
+
+#mr-snek {
+	position: absolute;
+	bottom: 120px;
+	right: 150px;
+	width: 75px;
+	height: auto;
+	transition: all 1s cubic-bezier(0.815, -0.310, 0.320, 0.810);
+}
+
+#snek-head {
+	animation: head-bob 1s infinite;
+}
+
+@keyframes head-bob {
+	50% {
+		transform: translateY(5px);
 	}
 }

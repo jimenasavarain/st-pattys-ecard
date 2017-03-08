@@ -1,0 +1,72 @@
+.factbox {
+	width: 700px;
+	height: 400px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	background-color: #f9fff5;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	box-sizing: border-box;
+	padding: 15px;
+	transition: 0.3s;
+}
+
+.flex {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+
+	flex-direction: column;
+}
+
+.factbox-top.flex {
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.factbox-top i {
+	font-size: 1.5em;
+	transition: 0.3s;
+}
+
+.fa-circle-o,
+.fa-chevron-down {
+	color: #999999;
+}
+
+.fa-check-circle-o:hover,
+.fa-chevron-down:hover {
+	color: #FF883E;
+}
+
+.fa-check-circle-o {
+	color: #169B62;
+}
+
+#closer {
+	width: 25px;
+}
+
+.factbox.flex {
+	height: 400px;
+}
+
+.factbox-top.wrap {
+	
+}
+
+.fact-content {
+	text-align: center;
+}
+
+.fact-content.wrap {
+	width: 600px;
+	margin: 0 auto;
+}

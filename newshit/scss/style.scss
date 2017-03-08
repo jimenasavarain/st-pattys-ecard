@@ -1,0 +1,37 @@
+/* IMPORT OTHER STYLESHEETS */
+
+@import 'normalize';
+
+
+/* BEGIN STYLESHEET */
+
+svg {
+	width: 75%;
+	height: auto;
+}
+
+#sun {
+	position: relative;
+	animation: sun-rotate 60s infinite linear;
+	transform-origin: center;
+	transition: all 1s cubic-bezier(0.815, -0.310, 0.320, 0.810);
+}
+
+#rainbow {
+	opacity: 0;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes cloud-drop {
+	70% {
+		transform: translateY(-10%);
+	}
+}
+
+@keyframes sun-rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
