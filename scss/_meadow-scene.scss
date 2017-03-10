@@ -1,0 +1,205 @@
+.meadow-container {
+	position: absolute;
+	bottom: -200px;
+	transition: 3s;
+	width: inherit;
+}
+
+.waterfall-container {
+	position: absolute;
+	bottom: 30px;
+	left: -100px;
+	width: 510px;
+	height: 285px;
+	transform: scaleX(-1);
+}
+
+.rocks {
+	position: absolute;
+	bottom: -50px;
+	pointer-events: none;
+}
+
+#rocks-back {
+	height: 330px;
+	width: auto;
+	left: 0;
+}
+
+#rocks-front {
+	height: 300px;
+	width: auto;
+	left: 230px;
+	transform: scaleX(-1);
+}
+
+.waterfall {
+	position: absolute;
+	bottom: 0;
+	left: 150px;
+	width: 150px;
+	height: 200px;
+	background: url(../images/hills/waterfall-sprite-01.svg) no-repeat;
+	background-size: 1440px 250px;
+	animation: waterfall 1.5s steps(8) infinite;
+	transform: skewX(-20deg);
+	border-radius: 25px 0 0 0;
+	border: 2px white solid;
+	transition: 1s;
+}
+
+@keyframes waterfall {
+	from {
+		background-position: 0px;
+	}
+	to {
+		background-position: -1440px;
+	}
+}
+
+.meadow-mound {
+	position: absolute;
+	bottom: -5px;
+	left: -5px;
+	width: 1070px;
+}
+
+#beer {
+	position: absolute;
+	right: 200px;
+	top: 110px;
+	width: 50px;
+	transition: 1s;
+	animation: beer-bounce 5s infinite;
+}
+
+#beer-bg {
+	transition: 0.3s;
+}
+
+@keyframes beer-bounce {
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+.gold-container {
+	//	animation: pot-bounce .5s;
+	transform-origin: bottom;
+}
+
+.gold {
+	position: absolute;
+	right: 255px;
+	bottom: -50px;
+	width: 200px;
+}
+
+.gold-bounce {
+	animation: pot-bounce .5s 1;
+}
+
+@keyframes pot-bounce {
+	50% {
+		transform: scaleY(1.1);
+	}
+}
+
+.gold-shine {
+	position: absolute;
+	width: 50px;
+	opacity: 0;
+	animation: gold-shine 6s infinite linear;
+}
+
+.gold-shine-1 {
+	right: 278px;
+	bottom: 102px;
+}
+
+.gold-shine-2 {
+	right: 335px;
+	bottom: 127px;
+	animation-delay: 2s;
+}
+
+.gold-shine-3 {
+	right: 378px;
+	bottom: 72px;
+	animation-delay: 4s;
+}
+
+@keyframes gold-shine {
+	40% {
+		opacity: 0;
+		transform: none;
+	}
+	50% {
+		opacity: 1;
+	}
+	60% {
+		opacity: 0;
+		transform: rotate(360deg);
+	}
+}
+
+.gold-piece {
+	position: absolute;
+	bottom: 50px;
+	right: 325px;
+	width: 50px;
+	transition: 1s;
+}
+
+#gold-piece-1 {
+	animation: spinning-gold 3s infinite linear, rising-gold 2s 1 forwards, hovering-gold 2s infinite 3s;
+}
+
+#gold-piece-2 {
+	animation: spinning-gold 3s infinite 1s linear, rising-gold 2s 1 forwards, hovering-gold 2s infinite 3s;
+}
+
+#gold-piece-3 {
+	animation: spinning-gold 3s infinite 2s linear, rising-gold 2s 1 forwards, hovering-gold 2s infinite 3s;
+}
+
+@keyframes spinning-gold {
+	50% {
+		transform: translateY(25px) rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes vanishing-gold {
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+
+/* HENRY + LEPRECHAUN = */
+
+.henrechaun {
+  position: absolute;
+  bottom: 76px;
+  left: 845px;
+  width: 130px;
+  transition: .5s;
+  transform-origin: 65% bottom;
+  opacity: 0;
+}
+
+.henrechaun-dance {
+	animation: henrechaun-dance 2s infinite;
+}
+
+@keyframes henrechaun-dance {
+  50% {
+	 transform: rotate(5deg);
+  }
+}

@@ -2,10 +2,8 @@
 	width: 700px;
 	height: 400px;
 	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	top: 130px;
+	left: 180px;
 	margin: auto;
 	background-color: #f9fff5;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -14,16 +12,7 @@
 	transition: 0.3s;
 }
 
-.flex {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-between;
 
-	flex-direction: column;
-}
 
 .factbox-top.flex {
 	flex-direction: row;
@@ -41,13 +30,26 @@
 	color: #999999;
 }
 
+.fa-check-circle-o {
+	color: #169B62;
+}
+
 .fa-check-circle-o:hover,
 .fa-chevron-down:hover {
 	color: #FF883E;
 }
 
-.fa-check-circle-o {
-	color: #169B62;
+.icon-flash {
+	animation: got-fact 2s forwards;
+}
+
+@keyframes got-fact {
+	0% {
+		color: #FF883E;
+	}
+	100% {
+		color: #169B62;
+	}
 }
 
 #closer {
@@ -69,4 +71,9 @@
 .fact-content.wrap {
 	width: 600px;
 	margin: 0 auto;
+}
+
+.minimize-hint {
+	font-size: .6em;
+	text-transform: uppercase;
 }

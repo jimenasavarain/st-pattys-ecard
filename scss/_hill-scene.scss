@@ -1,0 +1,168 @@
+/* FOREGROUND HILLS */
+
+.hills {
+	position: absolute;
+	bottom: -10px;
+	width: 710px;
+	pointer-events: none;
+}
+
+.hill-container {
+	position: absolute;
+	width: 100%;
+	transition: 3s;
+}
+
+#hill-left-container {
+	bottom: 0;
+	left: 0;
+}
+
+#hill-right-container {
+	bottom: 0;
+	right: 0;
+}
+
+#hill-left {
+	left: -15px;
+}
+
+#hill-right {
+	right: -15px;
+}
+
+
+/* GRASS */
+
+.grass {
+	position: absolute;
+	width: 30px;
+}
+
+.grass-left:nth-child(5) {
+	bottom: 130px;
+	left: 40px;
+}
+
+.grass-left:nth-child(6) {
+	bottom: 60px;
+	left: 120px;
+}
+
+.grass-left:nth-child(7) {
+	bottom: 90px;
+	left: 215px;
+}
+
+.grass-left:nth-child(8) {
+	bottom: 75px;
+	left: 330px;
+}
+
+.grass-left:nth-child(9) {
+	bottom: 25px;
+	left: 420px;
+}
+
+.grass-right:nth-child(4) {
+	bottom: 35px;
+	right: 400px;
+}
+
+.grass-right:nth-child(5) {
+	bottom: 80px;
+	right: 280px;
+}
+
+.grass-right:nth-child(6) {
+	bottom: 50px;
+	right: 180px;
+}
+
+.grass-right:nth-child(7) {
+	bottom: 130px;
+	right: 90px;
+}
+
+.grass-right:nth-child(8) {
+	bottom: 25px;
+	right: 40px;
+}
+
+/* CLOVERS */
+
+.clover {
+	position: absolute;
+	width: 0;
+	transition: 2s ease-in;
+	transform-origin: center bottom;
+}
+
+.clover-left:nth-child(3) {
+	bottom: 92px;
+	left: 227px;
+}
+
+.clover-left:nth-child(4) {
+	bottom: 27px;
+	left: 438px;
+}
+
+.clover-right:nth-child(2) {
+	bottom: 82px;
+	right: 293px;
+}
+
+.clover-right:nth-child(3) {
+	bottom: 132px;
+	right: 102px;
+}
+
+@keyframes pulse {
+	50% {
+		transform: scale(1.1, 1.1);
+	}
+}
+
+/* FLAG */
+
+.flag {
+	position: absolute;
+	top: -330px;
+	left: 120px;
+	width: 140px;
+	height: 200px;
+	background: url(../images/hills/flag-sprite.svg) no-repeat;
+	background-size: 1120px 200px;
+	animation: play .8s steps(8) infinite;
+}
+
+@keyframes play {
+	from {
+		background-position: 0px;
+	}
+	to {
+		background-position: -1120px;
+	}
+}
+
+/* SNAKE */
+
+#mr-snek {
+	position: absolute;
+	bottom: 120px;
+	right: 150px;
+	width: 75px;
+	height: auto;
+	transition: all 1s cubic-bezier(0.815, -0.310, 0.320, 0.810);
+}
+
+#snek-head {
+	animation: head-bob 1s infinite;
+}
+
+@keyframes head-bob {
+	50% {
+		transform: translateY(5px);
+	}
+}
