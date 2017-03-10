@@ -253,9 +253,9 @@ factIcon10.addEventListener('click', function () {
 function unlockNotification() {
 	factbox.style.width = "320px";
 	factbox.style.top = "600px";
-	setTimeout(function(){
-		factbox.style.width="310px";
-		factbox.style.top="610px";
+	setTimeout(function () {
+		factbox.style.width = "310px";
+		factbox.style.top = "610px";
 	}, 300);
 }
 
@@ -615,10 +615,12 @@ goldPot.addEventListener("click", function () {
 });
 
 var henrechaun = document.getElementById("henrechaun"),
-	henrechaunClickable = false;
+	henrechaunClickable = false,
+	henrechaunVisible = false;
 
 function helloHenrechaun() {
 	henrechaun.style.opacity = "1";
+	henrechaunVisible = true;
 	henrechaunClickable = true;
 }
 
@@ -627,18 +629,16 @@ doubloon1.addEventListener("click", function () {
 		factUnlock9();
 		gotGoldFact = true;
 	}
-	if (goldVisible == 3) {
-		if (gold1Clicked == false) {
-			goldClicked++
-			gold1Clicked = true;
-		}
-		if (goldClicked == 3) {
-			setTimeout(function () {
-				helloHenrechaun();
-			}, 1000);
-		}
-		doubloon1.style.opacity = "0";
+	if (gold1Clicked == false) {
+		goldClicked++
+		gold1Clicked = true;
 	}
+	if (goldClicked == 3) {
+		setTimeout(function () {
+			helloHenrechaun();
+		}, 1000);
+	}
+	doubloon1.style.opacity = "0";
 });
 
 doubloon2.addEventListener("click", function () {
@@ -646,18 +646,16 @@ doubloon2.addEventListener("click", function () {
 		factUnlock9();
 		gotGoldFact = true;
 	}
-	if (goldVisible == 3) {
-		if (gold2Clicked == false) {
-			goldClicked++
-			gold2Clicked = true;
-		}
-		if (goldClicked == 3) {
-			setTimeout(function () {
-				helloHenrechaun();
-			}, 1000);
-		}
-		doubloon2.style.opacity = "0";
+	if (gold2Clicked == false) {
+		goldClicked++
+		gold2Clicked = true;
 	}
+	if (goldClicked == 3) {
+		setTimeout(function () {
+			helloHenrechaun();
+		}, 1000);
+	}
+	doubloon2.style.opacity = "0";
 });
 
 doubloon3.addEventListener("click", function () {
@@ -666,18 +664,16 @@ doubloon3.addEventListener("click", function () {
 		gotGoldFact = true;
 	}
 
-	if (goldVisible === 3) {
-		if (gold3Clicked === false) {
-			goldClicked++
-			gold3Clicked = true;
-		}
-		if (goldClicked === 3) {
-			setTimeout(function () {
-				helloHenrechaun();
-			}, 1000);
-		}
-		doubloon3.style.opacity = "0";
+	if (gold3Clicked === false) {
+		goldClicked++
+		gold3Clicked = true;
 	}
+	if (goldClicked === 3) {
+		setTimeout(function () {
+			helloHenrechaun();
+		}, 1000);
+	}
+	doubloon3.style.opacity = "0";
 });
 
 // THE HUNT OF THE HENRECHAUN
@@ -761,7 +757,9 @@ moon.addEventListener("click", function () {
 	background.style.filter = "brightness(1)";
 	rainbow.style.opacity = rainbowProg;
 	rainbow.style.pointerEvents = "auto";
-	henrechaun.style.opacity = "1";
-	henrechaun.style.pointerEvents = "auto"
+	if (henrechaunVisible === true) {
+		henrechaun.style.opacity = "1";
+		henrechaun.style.pointerEvents = "auto"
+	}
 	isDaytime = true;
 });
