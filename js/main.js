@@ -102,7 +102,7 @@ function fact3print() {
 }
 
 var factHeader4 = "An Irish Holiday, but an American Parade",
-	factBody4 = "The world’s first recorded Saint Patrick's Day Parade took place in Boston on March 18, 1737, followed by the New York Parade, which first took place in 1762. ";
+	factBody4 = "The world’s first recorded Saint Patrick's Day Parade took place in Boston on March 18, 1737, followed by the New York Parade, which first took place in 1762.";
 
 function fact4print() {
 	factHeading.innerHTML = factHeader4;
@@ -247,7 +247,20 @@ factIcon10.addEventListener('click', function () {
 	}
 });
 
+
+// FACT UNLOCK FUNCTIONS
+
+function unlockNotification() {
+	factbox.style.width = "320px";
+	factbox.style.top = "600px";
+	setTimeout(function(){
+		factbox.style.width="310px";
+		factbox.style.top="610px";
+	}, 300);
+}
+
 function factUnlock1() {
+	unlockNotification();
 	fact1print();
 	fact1clickable = true;
 	$("#fact-1").removeClass("fa-circle-o").addClass("fa-check-circle-o icon-flash");
@@ -257,6 +270,7 @@ function factUnlock1() {
 }
 
 function factUnlock2() {
+	unlockNotification();
 	fact2print();
 	fact2clickable = true;
 	$("#fact-2").removeClass("fa-circle-o").addClass("fa-check-circle-o icon-flash");
@@ -266,6 +280,7 @@ function factUnlock2() {
 }
 
 function factUnlock3() {
+	unlockNotification();
 	fact3print();
 	fact3clickable = true;
 	$("#fact-3").removeClass("fa-circle-o").addClass("fa-check-circle-o icon-flash");
@@ -275,6 +290,7 @@ function factUnlock3() {
 }
 
 function factUnlock4() {
+	unlockNotification();
 	fact4print();
 	fact4clickable = true;
 	$("#fact-4").removeClass("fa-circle-o").addClass("fa-check-circle-o icon-flash");
@@ -284,6 +300,7 @@ function factUnlock4() {
 }
 
 function factUnlock5() {
+	unlockNotification();
 	fact5print();
 	fact5clickable = true;
 	$("#fact-5").removeClass("fa-circle-o").addClass("fa-check-circle-o icon-flash");
@@ -293,6 +310,7 @@ function factUnlock5() {
 }
 
 function factUnlock6() {
+	unlockNotification();
 	fact6print();
 	fact6clickable = true;
 	$("#fact-6").removeClass("fa-circle-o").addClass("fa-check-circle-o icon-flash");
@@ -311,6 +329,7 @@ function factUnlock7() {
 }
 
 function factUnlock8() {
+	unlockNotification();
 	fact8print();
 	fact8clickable = true;
 	$("#fact-8").removeClass("fa-circle-o").addClass("fa-check-circle-o icon-flash");
@@ -320,6 +339,7 @@ function factUnlock8() {
 }
 
 function factUnlock9() {
+	unlockNotification();
 	fact9print();
 	fact9clickable = true;
 	$("#fact-9").removeClass("fa-circle-o").addClass("fa-check-circle-o icon-flash");
@@ -712,6 +732,7 @@ henrechaun.addEventListener("click", function () {
 		factUnlock10();
 		fact10print();
 		factboxOpen();
+		hintText.innerHTML = " ";
 	} else {}
 });
 
