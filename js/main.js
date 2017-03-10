@@ -747,7 +747,6 @@ sun.addEventListener("click", function () {
 	rainbow.style.opacity = "0";
 	rainbow.style.pointerEvents = "none";
 	henrechaun.style.opacity = "0";
-	henrechaun.style.pointerEvents = "none"
 	isDaytime = false;
 });
 
@@ -759,7 +758,6 @@ moon.addEventListener("click", function () {
 	rainbow.style.pointerEvents = "auto";
 	if (henrechaunVisible === true) {
 		henrechaun.style.opacity = "1";
-		henrechaun.style.pointerEvents = "auto"
 	}
 	isDaytime = true;
 });
